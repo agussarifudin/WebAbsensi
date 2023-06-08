@@ -30,7 +30,8 @@ export default function Karyawan(e) {
             <TableCell>NIP</TableCell>
             <TableCell align="center">NAMA</TableCell>
             <TableCell align="center">JABATAN</TableCell>
-            <TableCell align="center">WAKTU</TableCell>
+            <TableCell align="center">Jam Masuk</TableCell>
+            <TableCell align="center">Jam Pulang</TableCell>
             <TableCell align="center">KETERLAMBATAN</TableCell>
             <TableCell align="center">PULANG CEPAT</TableCell>
             <TableCell align="center">LEMBUR</TableCell>
@@ -50,6 +51,7 @@ export default function Karyawan(e) {
               <TableCell align="center">{row.name}</TableCell>
               <TableCell align="center">{row.jabatan}</TableCell>
               <TableCell align="center">{row.waktu}</TableCell>
+              <TableCell align="center">{row.pulang}</TableCell>
               <TableCell align="center">{row.keterlambatan} menit</TableCell>
               <TableCell align="center">{row.pulang_cepat} menit</TableCell>
               <TableCell align="center">{row.lembur} menit</TableCell>

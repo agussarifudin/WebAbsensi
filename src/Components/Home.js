@@ -97,7 +97,8 @@ Swal.fire(
                 localStorage.setItem("absen","true")
                 const jam = date.getHours()
                 const menit = date.getMinutes()
-                await addDoc(usersCollectionRef,{nip:nip,name: name, jabatan: "Backend",waktu:localStorage.getItem("kehadiran"),keterlambatan:localStorage.getItem("keterlambatan"),pulang_cepat:pulang_cepat,lembur:lembur})
+                const jam_pulang = `${jam}:${menit}`
+                await addDoc(usersCollectionRef,{nip:nip,name: name, jabatan: "Backend",waktu:localStorage.getItem("kehadiran"),pulang:jam_pulang,keterlambatan:localStorage.getItem("keterlambatan"),pulang_cepat:pulang_cepat,lembur:lembur})
              
                     
                   Swal.fire({
@@ -124,7 +125,7 @@ Swal.fire(
         <Button onClick={handleLogout} variant='contained'>Logout</Button>
 
             <h1 style={{fontSize:"100%",textAlign:"center"}} >Selamat Datang {email}</h1>
-           
+           <h4 style={{textAlign:"center"}}>Jam kerja 08:00 - 17:00</h4>
             <h1 style={{textAlign:"center"}}>{date.toLocaleTimeString()}</h1>
             <div className='app'>
 
