@@ -143,11 +143,11 @@ Swal.fire(
 
 {localStorage.getItem("name")===localStorage.getItem("progress")?
 localStorage.getItem("absen")==="true"? <Button variant='contained' onClick={()=>createUser(
-    date.getHours()>=8>0?(((date.getHours()-8)*60)+date.getMinutes()):0
+    date.getHours()>=8&&date.getHours()<17?(((date.getHours()-8)*60)+date.getMinutes()):0
     )}>ABSEN SEKARANG</Button>
     :
     <Button variant="outlined" color="error" onClick={()=>handlePulang(
-    date.getHours()<=17&&date.getHours()>=8?(((17-date.getHours())*60)+date.getMinutes()):0,
+    date.getHours()<17&&date.getHours()>=8?(((17-date.getHours())*60)+date.getMinutes()):0,
     date.getHours()>=17?(((date.getHours()-17)*60)+date.getMinutes()):0
     )}>
         PULANG ?
